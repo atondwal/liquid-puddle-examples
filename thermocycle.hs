@@ -35,7 +35,7 @@ split self = return (d1, d2)
 -- heat will return the same droplet with somewhat (not sure how to calculate
 -- yet) lower volume because of evaporation
 heat :: VolDroplet -> IO VolDroplet
-heat sample = undefined
+heat sample = return sample {volume = volume sample * 0.7}
 
 
 -- NOTE: it'd be great if dispense only returned a single droplet, and the
